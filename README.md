@@ -2,6 +2,8 @@
 
 🚀 **DEX Argentino** - Un exchange descentralizado construido con Uniswap V3 y Thirdweb SDK, soportando múltiples blockchains.
 
+**⚠️ Disclaimer**: Este proyecto está en desarrollo. Úsalo bajo tu propio riesgo en mainnet. Siempre haz tus propias investigaciones antes de realizar transacciones.
+
 ## ✨ Características
 
 - 🔄 **Intercambio Multichain**: Soporta Ethereum, Polygon, Optimism, Arbitrum y Base
@@ -13,18 +15,18 @@
 
 ## 🛠 Stack Tecnológico
 
-- **Frontend**: Next.js 14, React 18, TypeScript
-- **Styling**: Tailwind CSS, Framer Motion
-- **Web3**: Thirdweb SDK v5, Uniswap V3
+- **Frontend**: Next.js 15.5, React 19, TypeScript 5
+- **Styling**: Tailwind CSS 4.1, Framer Motion 12
+- **Web3**: Thirdweb SDK v5.105, Uniswap V3
 - **UI Components**: Radix UI, shadcn/ui
-- **Estado**: React Query (TanStack Query)
+- **Estado**: TanStack React Query v5
 
 ## 🚀 Instalación y Configuración
 
 ### Prerrequisitos
 
-- Node.js 18+
-- npm o yarn
+- Node.js 20+ (recomendado para Next.js 15)
+- npm, yarn, pnpm o bun
 - Una cuenta en [Thirdweb](https://thirdweb.com/)
 
 ### 1. Clonar el repositorio
@@ -42,7 +44,19 @@ npm install
 yarn install
 ```
 
-### 3. Configurar variables de entorno
+### 3. Configurar Thirdweb
+
+#### Paso 3.1: Crear proyecto en Thirdweb
+
+1. Ve a [Thirdweb Dashboard](https://thirdweb.com/dashboard)
+2. Haz clic en "Create Project"
+3. Selecciona "Create a new project"
+4. Ingresa el nombre de tu proyecto (ej: "ARSC DEX")
+5. Copia tu **Client ID** desde el dashboard
+
+#### Paso 3.2: Configurar variables de entorno
+
+Crea el archivo `.env.local` en la raíz del proyecto:
 
 ```bash
 cp .env.example .env.local
@@ -51,8 +65,10 @@ cp .env.example .env.local
 Edita `.env.local` y agrega tu Thirdweb Client ID:
 
 ```env
-NEXT_PUBLIC_CLIENT_ID=tu_thirdweb_client_id_aqui
+NEXT_PUBLIC_THIRDWEB_CLIENT_ID=tu_client_id_aqui
 ```
+
+⚠️ **Importante**: Nunca commitees el archivo `.env.local` al repositorio
 
 ### 4. Ejecutar el proyecto
 
@@ -133,13 +149,72 @@ src/
 
 ## 📝 Roadmap
 
-- [ ] Implementar componente Swapper completo
-- [ ] Agregar soporte para más tokens
-- [ ] Implementar funciones de wrap/unwrap
+- [x] Implementar componente Swapper completo
+- [x] Agregar soporte para tokens principales (WETH, WBTC, USDC, USDT)
+- [x] Implementar funciones de wrap/unwrap
 - [ ] Agregar análisis de precio y gráficos
 - [ ] Soporte para pool de liquidez
 - [ ] Integración con más DEXs
 - [ ] App móvil
+
+## 🚀 Despliegue
+
+### Despliegue en Vercel (Recomendado)
+
+1. **Preparar el proyecto para producción**:
+   ```bash
+   npm run build
+   npm run type-check
+   npm run lint
+   ```
+
+2. **Conectar con Vercel**:
+   - Ve a [vercel.com](https://vercel.com)
+   - Importa tu repositorio de GitHub
+   - Configura las variables de entorno:
+     - `NEXT_PUBLIC_THIRDWEB_CLIENT_ID=tu_client_id_aqui`
+
+3. **Configurar dominio personalizado** (opcional):
+   - En el dashboard de Vercel, ve a Settings > Domains
+   - Agrega tu dominio personalizado
+
+### Despliegue en Netlify
+
+1. **Build del proyecto**:
+   ```bash
+   npm run build
+   ```
+
+2. **Configurar Netlify**:
+   - Conecta tu repositorio en [netlify.com](https://netlify.com)
+   - Build command: `npm run build`
+   - Publish directory: `out` (si usas `next export`) o `.next`
+   - Environment variables:
+     - `NEXT_PUBLIC_THIRDWEB_CLIENT_ID=tu_client_id_aqui`
+
+### Despliegue Manual
+
+1. **Generar build de producción**:
+   ```bash
+   npm run build
+   ```
+
+2. **Iniciar servidor de producción**:
+   ```bash
+   npm run start
+   ```
+
+### Variables de Entorno para Producción
+
+Asegúrate de configurar estas variables en tu plataforma de despliegue:
+
+```env
+# Obligatorio
+NEXT_PUBLIC_THIRDWEB_CLIENT_ID=tu_client_id_de_thirdweb
+
+# Opcional - para analytics
+NEXT_PUBLIC_GA_ID=tu_google_analytics_id
+```
 
 ## 🔐 Seguridad
 
@@ -162,10 +237,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 📞 Contacto
 
-- Website: [Tu sitio web]
-- Twitter: [@tu_twitter]
-- Email: tu@email.com
+- Website: [[kevinmiani.com](https://www.linkedin.com/in/kevin-miani/)]
 
 ---
-
-**⚠️ Disclaimer**: Este proyecto está en desarrollo. Úsalo bajo tu propio riesgo en mainnet. Siempre haz tus propias investigaciones antes de realizar transacciones.

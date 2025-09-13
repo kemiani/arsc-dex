@@ -1,7 +1,7 @@
 {
   "name": "arsc-dex",
   "version": "1.0.0",
-  "description": "DEX Argentino - Decentralized Exchange built with Uniswap V3 and Thirdweb",
+  "description": "DEX Argentino - Decentralized Exchange built with Next.js 15, React 19, Uniswap V3 and Thirdweb SDK",
   "private": false,
   "license": "MIT",
   "scripts": {
