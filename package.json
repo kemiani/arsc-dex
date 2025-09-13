@@ -3,23 +3,6 @@
   "version": "1.0.0",
   "description": "DEX Argentino - Decentralized Exchange built with Uniswap V3 and Thirdweb",
   "private": false,
-  "keywords": [
-    "dex",
-    "defi",
-    "uniswap",
-    "ethereum",
-    "polygon",
-    "arbitrum",
-    "base",
-    "optimism",
-    "web3",
-    "swap"
-  ],
-  "homepage": "https://github.com/yourusername/arsc-dex",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yourusername/arsc-dex.git"
-  },
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

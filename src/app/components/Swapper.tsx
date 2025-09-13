@@ -300,7 +300,7 @@ export default function Swapper() {
                   <TokenSelect
                     selectedKey={inputTokenKey}
                     onSelect={setInputTokenKey}
-                    className="bg-white/10 hover:bg-white/20 text-white rounded-xl px-4 py-2 min-w-[120px] transition-colors font-medium"
+                    className="bg-white/10 hover:bg-white/20 text-white rounded-xl px-2 py-2 min-w-[90px] flex-shrink-0 transition-colors font-medium text-xs"
                   />
                 </div>
               </div>
@@ -328,8 +328,8 @@ export default function Swapper() {
               transition={{ type: "spring" }}
             >
               <div className="relative p-4 bg-gray-800/40 hover:bg-gray-800/60 rounded-2xl backdrop-blur-lg border border-white/10 transition-all duration-300">
-                <div className={cn("flex items-center gap-3", quoteLoading && "animate-pulse")}>
-                  <div className="flex-1 text-2xl font-semibold text-white min-w-0">
+                <div className={cn("flex items-center gap-2", quoteLoading && "animate-pulse")}>
+                  <div className="flex-1 text-sm sm:text-base lg:text-lg font-semibold text-white min-w-0 break-all pr-1 leading-tight">
                     {quoteLoading ? (
                       <div className="flex items-center gap-3 text-gray-400">
                         <Loader2Icon className="animate-spin w-6 h-6" />
@@ -342,7 +342,7 @@ export default function Swapper() {
                   <TokenSelect
                     selectedKey={outputTokenKey}
                     onSelect={setOutputTokenKey}
-                    className="bg-white/10 hover:bg-white/20 text-white rounded-xl px-4 py-2 min-w-[120px] transition-colors font-medium"
+                    className="bg-white/10 hover:bg-white/20 text-white rounded-xl px-2 py-2 min-w-[90px] flex-shrink-0 transition-colors font-medium text-xs"
                   />
                 </div>
               </div>

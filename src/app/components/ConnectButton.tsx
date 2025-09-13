@@ -90,7 +90,7 @@ export default function ConnectButton() {
           connectButton={{
             label: "🦊 Conectar Wallet",
             className:
-              "!bg-gradient-to-r !from-cyan-500 !to-blue-600 hover:!from-cyan-600 hover:!to-blue-700 !rounded-full !px-4 sm:!px-6 lg:!px-8 !py-2 sm:!py-3 !text-sm sm:!text-base lg:!text-lg !font-medium !transition-all !duration-300 !shadow-md hover:!shadow-cyan-500/25 !text-white !border-0 !max-w-xs sm:!max-w-sm !mx-auto",
+              "!bg-gradient-to-r !from-cyan-500 !to-blue-600 hover:!from-cyan-600 hover:!to-blue-700 !rounded-full !px-3 sm:!px-4 !py-2 !text-xs sm:!text-sm !font-medium !transition-all !duration-300 !shadow-md hover:!shadow-cyan-500/25 !text-white !border-0 !w-auto !whitespace-nowrap",
           }}
           connectModal={{
             title: "ARSC DEX",
@@ -98,7 +98,7 @@ export default function ConnectButton() {
           }}
           detailsButton={{
             className:
-              "!bg-gradient-to-r !from-cyan-500 !to-blue-600 hover:!from-cyan-600 hover:!to-blue-700 !rounded-full !px-4 sm:!px-6 lg:!px-8 !py-2 sm:!py-3 !text-sm sm:!text-base lg:!text-lg !font-medium !transition-all !duration-300 !shadow-md hover:!shadow-cyan-500/25 !text-white !border-0 !max-w-xs sm:!max-w-sm !mx-auto",
+              "!bg-gradient-to-r !from-cyan-500 !to-blue-600 hover:!from-cyan-600 hover:!to-blue-700 !rounded-full !px-3 sm:!px-4 !py-2 !text-xs sm:!text-sm !font-medium !transition-all !duration-300 !shadow-md hover:!shadow-cyan-500/25 !text-white !border-0 !w-auto !whitespace-nowrap",
           }}
           supportedTokens={supportedTokens}
           wallets={wallets}
